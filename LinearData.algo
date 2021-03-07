@@ -1,0 +1,37 @@
+ALGORITHM FirstSolution
+VAR
+    Sentence1 : ARRAY_OF INTEGER[4];
+    Sentence2 : ARRAY_OF INTEGER[5];
+    i,j : INTEGER;
+    sum : INTEGER := 0;
+    Res : BOOLEAN;
+BEGIN
+
+    FOR i FROM 0 TO Sentence1.length-1 DO
+        Read(Sentence1[i]);
+        Res := false;
+    FOR J FROM 0 TO arr2.length-1 DO
+        Read(Sentence2[i]);
+            IF Sentence1[i] =Sentence2[j]; THEN
+                Res := true;BREAK;
+            END_IF
+        END_FOR
+        IF Res = false THEN 
+            sum := sum+Sentence1[i];
+        END_IF
+    END_FOR
+
+    FOR i FROM 0 TO Sentence2.length-1 DO
+        Res := false;
+        FOR J FROM 0 TO Sentence1.length-1 DO
+            IF Sentence1[i] =Sentence2[j]; THEN
+                Res := true;BREAK;
+            END_IF
+        END_FOR
+        IF Res = false THEN 
+            sum := sum+Sentence2[i];
+        END_IF
+    END_FOR
+
+    Write("the sum of all elements is : ",sum);
+END
